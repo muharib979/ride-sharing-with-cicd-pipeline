@@ -3,7 +3,7 @@ name: Angular CI/CD
 on:
   push:
     branches:
-      - main   # শুধু main branch এ push হলে pipeline চলবে
+      - main   
 
 jobs:
   build:
