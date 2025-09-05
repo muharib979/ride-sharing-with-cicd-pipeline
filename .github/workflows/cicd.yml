@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4   # ✅ v4 এ আপডেট করা হলো
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -24,7 +24,7 @@ jobs:
         run: npm run build -- --configuration=production
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4   # ✅ v4 এ আপডেট
         with:
           name: angular-dist
           path: dist/
@@ -34,17 +34,17 @@ jobs:
     runs-on: self-hosted   # এখানে তোমার সার্ভারের self-hosted runner চলবে
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4   # ✅ v4 এ আপডেট
 
       - name: Download Artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4   # ✅ v4 এ আপডেট
         with:
           name: angular-dist
           path: dist/
 
       - name: Deploy to Server
         run: |
-          echo "Deploying Angular App..."
+          echo "🚀 Deploying Angular App..."
           sudo rm -rf /var/www/html/*
           sudo cp -r dist/* /var/www/html/
           echo "✅ Deployment finished!"
