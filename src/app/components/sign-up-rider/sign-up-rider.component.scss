@@ -1,0 +1,204 @@
+
+
+
+.signUp{
+    width: 700px!important;border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #9AD9EA;
+    background-image: linear-gradient(to right, #9AD9EA ,#417584 );
+}
+
+.btnnn{
+    padding: 10px 50px;
+}
+
+.header{
+    background-color: #fff;
+}
+
+
+.input1{
+    width: 300px;
+  }
+
+  .arrow-symbol::after {
+    content: "▼"; /* Unicode character for down arrow */
+    font-size: 18px;
+    color: #555;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none; /* Ensure the arrow doesn't interfere with input */
+  }
+
+
+  ::ng-deep .route-tabset {
+    background-color: #0d6efd;
+    .tab-text{
+        color: #fff;
+        background-color: #0d6efd;
+    }
+}
+
+
+
+::ng-deep .nav-tabs .nav-link.active{
+    background-color: #9AD9EA;
+    background-image: linear-gradient(to right, #9AD9EA ,#278eab );
+    color: #fff;
+    justify-content: center !important;
+}
+
+::ng-deep .nav-tabs{
+    // border:3px solid #9AD9EA;
+    --bs-nav-tabs-border-color: #9AD9EA;
+    justify-content: center !important;
+}
+
+.flex-type{
+    display: flex;
+  }
+  .flex-type > div {
+    text-align: center; 
+    line-height: 10px;
+    margin: 10px;
+  }
+
+  .btns:hover, .btns:focus{
+    background: rgb(11,0,36);
+    background: linear-gradient(90deg, rgba(11,0,36,1) 0%, rgba(0,0,0,1) 0%, rgba(0,212,255,1) 100%);
+    color:#fff;
+  }
+  
+  .btns{
+      padding: 8px 30px;
+      border-radius: 10px;
+      background-color: #000000;
+      text-decoration: none;
+      color:#fff;
+      font-weight: bolder;
+      
+  }
+  
+  .btns-reSend:hover, .btns-reSend:focus{
+    background-color: #000000;
+    color:#fff;
+  }
+  
+  .btns-reSend{
+      padding: 5px 30px;
+      border-radius: 10px;
+      background-color: #fff;
+      text-decoration: none;
+      margin-top: -20px;
+  }
+  
+  .reSend{
+    margin-left: 200px;
+    margin-top: 140px;
+  }
+
+
+  ::ng-deep .mat-tab-label {
+    font-weight: bolder;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    // margin-top: 50px;
+
+  }
+  
+  mat-card {
+    padding: 25px;
+    width: 100%;
+    max-width: 900px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #9AD9EA;
+    background-image: linear-gradient(to right, #9AD9EA ,#417584 );
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+
+  @media (max-width: 600px) {
+    mat-form-field {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 900px) {
+    mat-form-field {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 300px) {
+    mat-form-field {
+      width: 100%;
+    }
+  }
+
+  .file-input {
+    display: block;
+    width: 100%;
+    padding: 0; /* Reset padding to ensure correct height */
+    border: none; /* Remove border to fit within mat-form-field */
+    box-shadow: none; /* Remove shadow to fit within mat-form-field */
+  }
+
+
+.center-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // margin-right: 10px!important;
+  height: 100%; /* Adjust height to match the input field if necessary */
+  width: 100%;  /* Adjust width to match the input field if necessary */
+}
+
+.blue-button {
+  background-color: #2196f3; /* Adjust color as needed */
+  color: white;
+  border-radius: 50%; /* Make it a circle */
+
+}
+
+        // change input left side border-radius
+
+
+
+
+
+// ::ng-deep .mdc-text-field--outlined{
+//  padding-top: 20px !important;
+// }
+
+
+// ::ng-deep .mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__leading {
+//   border-top-left-radius: var(--mdc-shape-small, 12px) !important;
+//   border-bottom-left-radius: var(--mdc-shape-small, 12px) !important;
+//   // background-color: #fff;
+
+// }
+
+// ::ng-deep .mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__trailing {
+//   border-top-right-radius: var(--mdc-shape-small, 12px) !important;
+//   border-bottom-right-radius: var(--mdc-shape-small, 12px) !important;
+//   // background-color: #fff;
+
+// }
+// ::ng-deep .mat-mdc-form-field {
+//   --mat-mdc-form-field-floating-label-scale: 1.10 !important;
+//   min-width: 5px !important;
+ 
+// }

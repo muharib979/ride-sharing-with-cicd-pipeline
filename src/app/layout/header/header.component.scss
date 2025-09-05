@@ -1,0 +1,126 @@
+.navbar{
+    background-color:#000000;
+    ;
+}
+
+.nav-link{
+  color: #ffff;
+  font-size: medium;
+}
+
+.buttons {
+  background-color: #131718; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50px;
+ }
+
+ .ui-w-30{
+  width: 30px !important;
+  height: auto;
+ }
+ .dropdown-item{
+  --bs-dropdown-link-color:black
+}
+
+mat-toolbar {
+  background: #333; /* Change this to your desired color */
+  color: white;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-right: 20px;
+}
+
+.nav-link {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.username {
+  margin-right: 10px;
+}
+
+.profile-photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.large-menu {
+  min-width: 200px; /* Adjust width as needed */
+}
+
+mat-menu-item {
+  display: flex;
+  align-items: center;
+}
+
+mat-icon {
+  margin-right: 10px;
+}
+   // icon color
+
+.icon-inbox { color: blue; }
+.icon-profile { color: green; }
+.icon-preferences { color: orange; }
+.icon-payment { color: purple; }
+.icon-security { color: red; }
+.icon-terms { color: teal; }
+.icon-privacy { color: magenta; }
+.icon-help { color: brown; }
+.icon-logout { color: black; }
+
+
+.custom-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.rider {
+  background-color: #007bff; /* Blue */
+}
+
+.driver {
+  background-color: #28a745; /* Green */
+}
+
+.business {
+  background-color: #17a2b8; /* Light Blue */
+}
+
+.custom-button:hover {
+  opacity: 0.8;
+}
+.custom-label {
+  color: black; /* Set the text color to white */
+  font-size: 16px; /* Adjust the font size */
+  font-weight: bold; /* Make the text bold */
+ // background-color: #007bff; /* Optional: Add a background color to make it stand out */
+  padding: 5px 10px; /* Add padding for better spacing */
+  border-radius: 5px; /* Round the corners */
+  display: inline-block; /* Keep the label as an inline element with block-level styling */
+}
+
+
+

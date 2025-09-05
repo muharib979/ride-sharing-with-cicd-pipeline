@@ -1,0 +1,63 @@
+.dialog-title {
+    background-color: #000000; /* Background color for the title (e.g., a nice blue) */
+    color: #fff; /* White text color */
+    padding: 15px; /* Padding to create space around the text */
+    border-radius: 5px 5px 0 0; /* Rounded corners for the top of the title */
+    text-align: center; /* Center the title text */
+    font-family: 'Arial', sans-serif; /* Choose a stylish font */
+    font-weight: bold; /* Make the title bold */
+    font-size: 24px; /* Increase font size */
+    margin: 0; /* Remove default margin */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for depth */
+  }
+
+
+.close-button-container {
+    background-color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10; /* Ensure the button is on top of other elements */
+  }
+
+
+.dialog-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    max-Width: 80%;
+    max-Height: 80%;
+    min-Width: 80%;
+    min-Height:80%;
+  }
+  
+  .image-wrapper {
+    border: 5px solid #3498db; /* Stylish border */
+    border-radius: 10px; /* Rounded corners */
+    //padding: 10px; /* Space between the image and the border */
+    background-color: #f0f0f0; /* Light gray background inside the border */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    max-width: 80%;
+    max-height: 80%;
+    min-width: 80%;
+    min-height: 80%;
+  }
+  
+  .dialog-image {
+    width: 500px;
+    height: 500px;
+    max-width: 80%;
+    max-height: 80%;
+    min-width: 80%;
+    min-height: 80%;
+    object-fit: contain; /* Ensures image maintains aspect ratio */
+    border-radius: 5px; /* Match border's rounded corners */
+  }
+  

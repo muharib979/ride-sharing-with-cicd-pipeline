@@ -1,0 +1,195 @@
+<main class="container">
+    <div class="row" id="loginForm">
+      <section class="offset-md-3 col-md-6">
+  
+        <div class="card shadow p-5" style=" background-color: #9AD9EA;
+              background-image: linear-gradient(to right, #9AD9EA ,#417584 );">
+          <h3 class="text-center mb-3 font-time">Please Login!</h3>
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+  
+            <div class="mb-3">
+              <input formControlName="userName" (focus)="clearErrMsg()" type="text" name="username" id="username"
+                class="form-control rounded-pill" placeholder="Enter Your Username" />
+            </div>
+  
+            <div class="mb-3">
+              <input formControlName="password" (focus)="clearErrMsg()" type="password" name="password"
+                id="password" class="form-control rounded-pill" placeholder="Enter Your Password" />
+            </div>
+            <!-- <label id="example-radio-group-label">Pick your favorite season</label> -->
+            <!-- <mat-radio-group aria-label="Select an option" formControlName="signUpAs">
+              <mat-radio-button value="Rider">Login as Rider</mat-radio-button>
+              <mat-radio-button value="Driver">Login as Driver</mat-radio-button>
+              <mat-radio-button value="Business">Login as Business</mat-radio-button>
+            </mat-radio-group> -->
+  
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="customCheck">
+              <label class="form-check-label" for="customCheck">Remember Me</label>
+            </div>
+            <button mat-raised-button class="btn btn-info w-100 rounded-pill"  type="submit">Submit</button>
+            <!-- <button class="btn btn-info w-100 rounded-pill" id="submit" (click)="login()">Login</button> -->
+  
+          </form>
+          <hr>
+  
+          <a href="index.html" class="btn btn-secondary  rounded-pill w-100 mb-2">
+            <i class="fab fa-google fa-fw"></i> Login with Google
+          </a>
+          <a href="index.html" class="btn btn-primary rounded-pill w-100 mb-2">
+            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
+          </a>
+  
+          <hr>
+          <div class="text-center">
+            <a class="font-time"  (click)="modalServOpen(sendOTP)">Forgot Password?</a>
+          </div>
+          <div class="text-center">
+            <a class="font-time"routerLink="/signUp"  (click)="modalServOpen(signUpAs)">Create an Account!</a>
+          </div>
+  
+        </div>
+  
+      </section>
+    </div>
+  </main>
+  
+  <ng-template #sendOTP>
+    <div class="modal-header" style="background-color: #000000;">
+    <h4 class="modal-title text-white" id="modal-basic-title" style="margin-left: 190px;"> Send OTP</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modalService.dismissAll()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <form [formGroup]="sendOtpForm">
+    <div class="container" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #9AD9EA;
+    background-image: linear-gradient(to right, #9AD9EA ,#417584 );border-radius: 5px;">
+     <!-- <mat-card>
+      <mat-card-content> -->
+        <div class="row">
+          <div class="col-md-12  mt-3">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" required>
+              <mat-icon matSuffix>email</mat-icon>
+              <mat-error *ngIf="handleErrorRegister('email', 'required')">Email is required</mat-error>
+              <mat-error *ngIf="handleErrorRegister('email', 'email')">Email should be of valid format</mat-error>
+            </mat-form-field>
+          </div>
+      
+            <div class="col-md-12">
+                  <label class="custom-label">Choose your Account</label>
+                  <mat-radio-group aria-label="Select an option" formControlName="signUpAs">
+                  <mat-radio-button value="Rider" class="radio-button">Rider</mat-radio-button>
+                  <mat-radio-button value="Driver" class="radio-button">Driver</mat-radio-button>
+                  <mat-radio-button value="Business" class="radio-button">Business</mat-radio-button>
+                </mat-radio-group>
+            </div>
+    
+           <button class="buttons mt-5" (click)="sendOtp()">Send OTP</button><br>
+          </div>
+      
+        </div>
+
+
+
+  
+    
+  </form>
+  </ng-template>
+
+  <ng-template #varifyOtpTemplate>
+    <div class="modal-header" style="background-color: #000000;">
+      <h4 class="modal-title text-white" id="modal-basic-title" style="margin-left: 190px;"> Enter OTP</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modalService.dismissAll()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  
+    <div class="container" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      background-color: #9AD9EA;
+      background-image: linear-gradient(to right, #9AD9EA ,#417584 );border-radius: 5px;">
+      <div class="row">
+  
+        <div class="text-center p-5">
+  
+          <div class="col-md-12 mt-3">
+            <ng-otp-input #ngOtpInput (onInputChange)="onOtpChange($event)" *ngIf="showOtpComponent" [config]="config"></ng-otp-input>
+          </div>
+  
+  
+          <button class="btns mt-5" (click)="varifyEmail()">Verify</button><br>
+          <!-- <a routerLink="/signUp" (click)="modalService.dismissAll()"><button class="button button5 mt-3">SIGN UP</button></a> -->
+        </div>
+        <div class="flex-type justify-content-center">
+          <div *ngIf="timeLeft > 0">
+            <p>Time Left: {{ timeLeft }} seconds</p>
+          </div>
+          <div class=""><a class="btns">Re-send</a></div>
+        </div>
+  
+      </div>
+    </div>
+  
+  </ng-template>
+
+  <ng-template #signUpAs>
+
+    <!-- terms-modal.component.html -->
+    <div class="modal-header" style="background-color: #000000;">
+      <h4 class="modal-title text-white" id="modal-basic-title" style="margin-left: 190px;"> SignUp AS</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modalService.dismissAll()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="container" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #9AD9EA;
+    background-image: linear-gradient(to right, #9AD9EA ,#417584 );border-radius: 5px;">
+    <div class="row">
+      <div class="col-md-12 mt-5 mb-5">
+        <label class="custom-label">Choose your Account</label>
+        <mat-radio-group (change)="onSignUpSelectionChange($event)">
+          <mat-radio-button  value="Rider">Rider</mat-radio-button>
+          <mat-radio-button  value="Driver">Driver</mat-radio-button>
+          <mat-radio-button  value="Business">Business</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+    
+  </div>
+  <!-- <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modalService.dismissAll()">Close</button>
+  </div> -->
+  
+  </ng-template>
+
+  <ng-template #loginAs>
+    <div class="modal-header" style="background-color: #000000;">
+      <h4 class="modal-title text-white" id="modal-basic-title" style="margin-left: 190px;"> Login AS</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modalService.dismissAll()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="container" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #9AD9EA;
+    background-image: linear-gradient(to right, #9AD9EA ,#417584 );border-radius: 5px;">
+    <div class="row">
+      <div class="col-md-12 mt-5 mb-5">
+        <label class="custom-label">Choose your Account</label>
+        <mat-radio-group (change)="onSelectionChange($event)">
+          <mat-radio-button value="Rider" class="radio-button">Rider</mat-radio-button>
+          <mat-radio-button value="Driver" class="radio-button">Driver</mat-radio-button>
+          <mat-radio-button value="Business" class="radio-button">Business</mat-radio-button>
+        </mat-radio-group>
+        
+        <!-- <button class="custom-button rider"  [routerLink]="['/login']" [queryParams]="{ role: 'Rider' }" (click)="modalService.dismissAll()">Rider</button>
+        <button class="custom-button driver" [routerLink]="['/login']" [queryParams]="{ role: 'Driver' }"  (click)="modalService.dismissAll()">Driver</button>
+        <button class="custom-button business" [routerLink]="['/login']" [queryParams]="{ role: 'Business'}" (click)="modalService.dismissAll()">Business</button> -->
+      </div>
+    </div>
+    
+  </div>
+
+  
+  </ng-template>

@@ -1,0 +1,127 @@
+<!-- <button (click)="sendRiderRequest()">Send Request</button> -->
+<div class="bg-wrapper">
+  <header class="inbox-header">
+    <h1 class="text-center">Inbox</h1>
+    <button mat-raised-button color="warn" (click)="onClose()">Close</button>
+  </header>
+
+
+
+  <!-- <ul>
+    <li *ngFor="let message of data.message">{{ message.riderName }} <button class="btn btn-success">Accept</button> Or <button class="btn btn-danger">Decline</button></li>
+  </ul> -->
+
+
+  <!-- <ul class="message-list">
+    <li *ngFor="let message of flattenedMessages" class="message-item">
+    <p><strong>Name:</strong> {{ message.riderName }}</p>
+    <p><strong>Phone Number:</strong> {{ message.phoneNumber }}</p>
+    <p><strong>Gender:</strong> {{ message.gender }}</p>
+    <p><strong>From:</strong> {{ message.from }}</p>
+    <p><strong>To:</strong> {{ message.to }}</p>
+    <p><strong>Address:</strong> {{ message.address }}</p>
+    <p><strong>Preferred Car:</strong> {{ message.preferCar }}</p>
+    <p><strong>Ride Price:</strong> {{ message.ridePrice }}</p>
+    <p><strong>Ride Discount:</strong> {{ message.rideDiscount }}</p>
+    
+    <div *ngIf="message.picture">
+      <p><strong>Picture:</strong></p>
+      <img class="profile-photo"  [src]="'data:image/'+message.picture+';base64,'+message.pictureBase64">
+    </div>
+
+  </li>
+</ul> -->
+
+  <!-- <table class="message-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone Number</th>
+      <th>Gender</th>
+      <th>From</th>
+      <th>To</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let message of flattenedMessages">
+      <td>{{ message.riderName }}</td>
+      <td>{{ message.phoneNumber }}</td>
+      <td>{{ message.gender }}</td>
+      <td>{{ message.from }}</td>
+      <td>{{ message.to }}</td>
+    </tr>
+    <tr *ngFor="let message of flattenedMessages">
+      <td colspan="5">
+        <p><strong>Address:</strong> {{ message.address }}</p>
+        <p><strong>Preferred Car:</strong> {{ message.preferCar }}</p>
+        <p><strong>Ride Price:</strong> {{ message.ridePrice }}</p>
+        <p><strong>Ride Discount:</strong> {{ message.rideDiscount }}</p>
+        
+
+        <div *ngIf="message.picture">
+          <p><strong>Picture:</strong></p>
+          <img [src]="message.picture" alt="Rider Picture" width="100">
+        </div>
+        
+            <div *ngIf="message.pictureBase64">
+          <p><strong>Base64 Picture:</strong></p>
+          <img [src]="'data:image/jpeg;base64,' + message.pictureBase64" alt="Rider Base64 Picture" width="100">
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table> -->
+
+
+  <div class="notification-card" *ngFor="let message of flattenedMessages">
+    <div class="card-container">
+      <!-- Rider Image and Name -->
+      <div class="price-buttons">
+        <p class="price"><strong>Price: </strong><span class="amount">${{message.ridePrice}}</span></p>
+        <p class="price" *ngIf="message.pickupTime != 'Now'"><strong>PickUpTime: </strong><span class="amount">{{message.pickupTime | date: 'dd MMMM yyyy \'Time:\'hh:mma' }}</span></p>
+        <p class="price" *ngIf="message.pickupTime == 'Now'"><strong>PickUpTime: </strong><span class="amount">{{message.pickupTime}}</span></p>
+      </div>
+      <br>
+      <div class="main-row">
+        <img [src]="'data:image/jpeg;base64,' + message.pictureBase64" alt="Rider Base64 Picture" width="100">
+        <div class="rider-details">
+          <h3 class="rider-name">{{ message.riderName }}</h3>
+          <p class="rider-status"><strong>Phone: </strong>{{ message.phoneNumber }}</p>
+          <p class="rider-status"><strong>Rating: </strong> ⭐️ 4.8</p>
+          <p class="rider-status"><strong>Distance: </strong> {{message.distance}}</p>
+        </div>
+
+
+        <!-- Trip Details -->
+        <div class="trip-details">
+          <div class="location">
+            <mat-icon>location_on</mat-icon>
+            <span class="from"><strong>From:</strong> {{message.from}}</span>
+          </div>
+          <div class="location">
+            <mat-icon>flag</mat-icon>
+            <span class="to"><strong>To:</strong> {{message.to}}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <!-- Approve Button -->
+        <!-- <button mat-stroked-button color="success">Accept</button> -->
+        <button mat-flat-button color="primary" (click)="driverApprove(message)">Accept</button>
+
+        <!-- Decline Button -->
+        <!-- <button mat-stroked-button color="warn">Reject</button> -->
+        <button mat-flat-button color="accent">Reject</button>
+        <!-- <button mat-icon-button>
+        <mat-icon>approve</mat-icon>
+      </button>
+      <button class="btn btn-success">Accept</button> 
+      <button mat-button color="primary">Approve</button>
+      <button class="btn btn-danger">Reject</button>
+      <button mat-button color="warn">Reject</button> -->
+      </div>
+    </div>
+  </div>
+</div>

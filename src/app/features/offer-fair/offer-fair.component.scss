@@ -1,0 +1,23 @@
+.price {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    color: #5a5a5a;
+    text-align: center;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  mat-dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+  }
+  
+  button[mat-flat-button] {
+    background-color: #6200ea;
+    color: white;
+    width: 100%;
+  }
+  

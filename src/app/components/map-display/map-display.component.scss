@@ -1,0 +1,171 @@
+.map{
+    display: block;
+    height: 100vh; /* Full page height */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(../../../assets/images/rider.jpg);
+}
+
+/* Main container - Flex layout */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;  /* Reduced padding */
+  }
+  
+  /* Get a Ride section */
+  .ride-form-section {
+    flex: 1;  /* This takes the left column */
+    padding: 10px;
+    border-right: 1px solid #ddd;
+  }
+  
+  /* Ride Options Section */
+  .ride-options-section {
+    flex: 2;  /* This will take the middle column */
+    padding: 10px;
+    overflow-y: auto;
+    max-height: 550px;
+    position: relative;
+  }
+  
+  /* Ride Option Layout */
+  .ride-option {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .ride-option-inner {
+    display: flex;
+    align-items: center;
+  }
+  
+  .ride-option-inner.selected {
+    border-color: black;
+    background-color: #f2f2f2;
+  }
+  
+  /* Rider image */
+  .ride-icon {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+  
+  .ride-details {
+    flex-grow: 1;
+  }
+  
+  .ride-price {
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 15px;
+  }
+  
+  /* Right Section: Map */
+  .map-section {
+    flex: 1;  /* This takes the right column */
+    padding: 10px;
+  }
+  
+  google-map {
+    height: 100%;  /* Full height for map section */
+    width: 100%;   /* Full width */
+  }
+  
+  /* Mobile responsive layout */
+  @media (max-width: 500px) {
+    .main-container {
+      flex-direction: column;  /* Stack vertically on small screens */
+    }
+
+    
+  
+    .ride-form-section, .ride-options-section, .map-section {
+      flex: 1;
+      max-width: 100%;
+      border: none;
+      padding: 10px 0;
+    }
+  
+    .ride-options-section {
+      max-height: auto;
+      overflow-y: unset;
+    }
+  }
+
+
+  /* Ride Selection Actions */
+.ride-selection-actions {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    justify-content: center; /* Center buttons vertically */
+    align-items: center; /* Center buttons horizontally */
+    position: sticky; /* Stick to the bottom of the container */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Full width */
+    background-color: white; /* White background for the button container */
+    padding: 10px; /* Padding around buttons */
+    box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for separation */
+  }
+  
+  .ride-selection-actions button {
+    width: 100%; /* Make buttons full width */
+    margin-bottom: 10px; /* Spacing between buttons */
+  }
+  
+  .ride-selection-actions button:last-child {
+    margin-bottom: 0; /* No margin for the last button */
+  }
+
+// .hydrated{
+//   color: #1809ef!important;
+// }
+
+ion-datetime {
+  // --background: #fff1f2;
+  // --background-rgb: 255, 241, 242;
+  // --background-rgb: rgb(0, 0, 255);
+
+  border-radius: 16px;
+  box-shadow:black 3px 5px 5px -3px;
+}
+
+// :root {
+//   --ion-color-rose: #831843;
+//   --ion-color-rose-rgb: 131, 24, 67;
+//   --ion-color-rose-contrast: #ffffff;
+//   --ion-color-rose-contrast-rgb: 255, 255, 255;
+//   --ion-color-rose-shade: #73153b;
+//   --ion-color-rose-tint: #8f2f56;
+// }
+
+.ion-color-rose {
+  --ion-color-base: var(--ion-color-rose);
+  --ion-color-base-rgb: var(--ion-color-rose-rgb);
+  --ion-color-contrast: var(--ion-color-rose-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-rose-contrast-rgb);
+  --ion-color-shade: var(--ion-color-rose-shade);
+  --ion-color-tint: var(--ion-color-rose-tint);
+}
+
+
+  
+  /* Mobile responsive layout */
+  @media (max-width: 768px) {
+    .ride-selection-actions {
+      flex-direction: column; /* Stack buttons vertically on small screens */
+    }
+  }
+  
+  

@@ -1,0 +1,11 @@
+<!-- <mat-form-field appearance="outline">
+    <input [placeholder]="placeholder" #inputField matInput />
+  </mat-form-field> -->
+
+  <mat-form-field appearance="outline">
+    <input [placeholder]="placeholder" #inputField matInput />
+    <button mat-icon-button matSuffix *ngIf="isLocationShow" (click)="onCurrentLocation()">
+      <mat-icon>location_on</mat-icon>
+    </button>
+  </mat-form-field>
+  

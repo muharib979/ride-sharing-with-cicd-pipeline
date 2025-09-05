@@ -1,0 +1,33 @@
+<!-- <div class="agreement-container">
+    <h2>Terms and Conditions</h2>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, iste? Molestias placeat porro quos vitae velit non vel at, omnis labore. Omnis eveniet, illo a quasi temporibus perspiciatis modi architecto, sunt atque adipisci aperiam enim ullam, fugiat cum beatae. Molestias quam quo maiores dolorum voluptate, laborum nostrum esse assumenda quis? Sapiente nam dolore totam incidunt voluptas cupiditate ipsam ea porro reiciendis nihil vel officia necessitatibus dignissimos voluptate inventore veniam tenetur, officiis magnam nemo asperiores quis et harum. Necessitatibus placeat, similique voluptate sapiente, nihil cumque asperiores, non corrupti accusamus perspiciatis aspernatur iure ipsa in. Voluptatem dolores sequi voluptatum a rem voluptas aut officiis ipsa pariatur eius necessitatibus id voluptate, illo magnam error laudantium odio, excepturi placeat veniam labore sapiente numquam. Iusto soluta repellat quam itaque cum eveniet asperiores fugiat, veritatis id accusantium suscipit animi ducimus a, magni facilis at autem sunt vitae! Delectus optio consequatur alias mollitia vel molestias aut temporibus repellendus laudantium tenetur perferendis voluptatum, quos quisquam, rerum soluta tempora distinctio quasi impedit. Tempore reiciendis facere animi itaque doloribus nobis, esse ratione veritatis nam voluptatem. Iusto blanditiis ex ut repellendus, minus enim natus voluptatem molestiae aliquam eaque nisi quod, sequi est fugiat voluptatibus dicta possimus obcaecati odio consequatur! Facere, dolor facilis molestiae, expedita omnis fugiat deserunt a adipisci alias, sunt sequi veniam repudiandae. Quibusdam sunt officiis incidunt repellendus, nam dolorem mollitia distinctio iste, tenetur dolor totam natus perspiciatis sit impedit quia. Cumque laboriosam debitis assumenda praesentium nihil cupiditate laudantium nisi deleniti fugit consequatur illo doloribus pariatur, quidem earum suscipit facere culpa maiores cum iusto esse, amet placeat saepe rem. Ex magnam nulla minima ut neque impedit accusamus nostrum recusandae, minus doloremque eligendi voluptatum, porro exercitationem vitae blanditiis repudiandae ratione consectetur nihil. Vitae quidem molestias, consequatur dicta rerum possimus, architecto hic quaerat vel dolores quod ipsam debitis perspiciatis rem libero adipisci veniam itaque maiores cum ipsum beatae. Amet, inventore ducimus necessitatibus quis esse officiis quasi quibusdam nostrum vero blanditiis praesentium tenetur similique veritatis aliquam dignissimos recusandae deleniti nemo nam maxime ullam hic. Voluptas doloremque obcaecati cum voluptates deserunt adipisci repellat reprehenderit quasi sint possimus ipsam velit ipsa, mollitia perspiciatis maxime, maiores quibusdam eos libero harum ducimus delectus nostrum dolore accusamus corrupti. Eum, consequuntur quo itaque voluptate laborum et? Modi molestiae facilis veniam nostrum amet illo. Rem consequuntur quas totam? Iste quod quo a? Necessitatibus ipsa minus modi nostrum unde tenetur quisquam fugit dolor saepe adipisci ratione voluptate tempora optio, temporibus consequatur rerum rem! Facere, et! Earum cum magnam rem! Magni dolor tempora fugit dolores incidunt molestias sint voluptas enim accusamus at. Eos cumque accusamus praesentium labore odit voluptas harum. Sunt, delectus ab dicta nostrum labore ducimus quae excepturi? Similique minus officia enim obcaecati consequatur ullam! Quasi exercitationem officiis nisi facere debitis iusto mollitia veritatis repellat quisquam qui corrupti, et nobis autem consequuntur explicabo ducimus eius beatae aperiam nemo voluptatem ipsa cum eaque sit sunt. Officia perferendis sit velit soluta odio! Corrupti esse perferendis nobis dolores tenetur commodi doloremque illum. Modi assumenda voluptate a atque quo quisquam molestias, velit ipsum corrupti voluptas.
+    </p>
+    <div class="acceptance">
+        <input type="checkbox" id="acceptCheckbox" [(ngModel)]="isAccepted" />
+        <label for="acceptCheckbox"> I accept the terms and conditions</label>
+    </div>
+    <button [disabled]="!isAccepted" (click)="onAccept()">Accept</button>
+</div> -->
+
+<div class="container">
+    <header>
+        <h1>Terms and Conditions</h1>
+    </header>
+    <section class="introduction">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, iste? Molestias placeat porro quos vitae velit non vel at, omnis labore. Omnis eveniet, illo a quasi temporibus perspiciatis modi architecto, sunt atque adipisci aperiam enim ullam, fugiat cum beatae. Molestias quam quo maiores dolorum voluptate, laborum nostrum esse assumenda quis? Sapiente nam dolore totam incidunt voluptas cupiditate ipsam ea porro reiciendis nihil vel officia necessitatibus dignissimos voluptate inventore veniam tenetur, officiis magnam nemo asperiores quis et harum. Necessitatibus placeat, similique voluptate sapiente, nihil cumque asperiores, non corrupti accusamus perspiciatis aspernatur iure ipsa in. Voluptatem dolores sequi voluptatum a rem voluptas aut officiis ipsa pariatur eius necessitatibus id voluptate, 
+        </p>    </section>
+    <section class="content">
+
+    </section>
+    <!-- <div class="acceptance">
+        <input type="checkbox" id="acceptCheckbox" [(ngModel)]="isAccepted" />
+        <label for="acceptCheckbox"> I accept the terms and conditions</label>
+    </div> -->
+    <!-- <button [disabled]="!isAccepted" (click)="onAccept()">Accept</button> -->
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close="false">Decline</button>
+        <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Accept</button>
+      </mat-dialog-actions>
+</div>

@@ -1,0 +1,62 @@
+.mat-dialog-content {
+    max-height: 100%;  // Ensure content respects the max-height set on the dialog
+    overflow-y: auto;  // Make content scrollable if it exceeds the height
+  }
+  
+
+.ride-details-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .recommended {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  
+  .ride-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e0e0e0;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+  
+  .ride-option-inner {
+    display: flex;
+    align-items: center;
+  }
+  
+  .ride-icon {
+    width: 60px;
+    height: 60px;
+    margin-right: 12px;
+  }
+  
+  .ride-details {
+    flex: 1;
+  }
+  
+  .ride-price {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: end;
+    padding-top: 3px;
+  }
+  
+  .add-payment-method {
+    flex: 1;
+    margin-right: 12px;
+  }
+  

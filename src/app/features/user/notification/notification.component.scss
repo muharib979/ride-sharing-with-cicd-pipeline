@@ -1,0 +1,93 @@
+
+.bg-wrapper{
+  background-color: #9AD9EA;
+  background-image: linear-gradient(to right, #9AD9EA ,#278eab );
+}
+
+.inbox-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  background: #000;
+  color: #fff;
+}
+
+
+
+  .notification-card {
+    // background: #fff;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  .card-container {
+    width: 550px;
+    padding: 10px;
+    box-shadow: 10px 10px 10px 10px rgba(8, 8, 8, 0.1);
+  }
+  
+  .main-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .rider-details {
+    font-size: 14px;
+    max-width: 45%; /* Ensures both sides have space */
+  }
+  
+  .rider-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .rider-status {
+    // color: gray;
+    margin: 2px 0;
+  }
+  
+  .trip-details {
+    font-size: 14px;
+    max-width: 45%; /* Ensures both sides have space */
+  }
+  
+  .location {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  
+  .location mat-icon {
+    font-size: 18px;
+    color: #3f51b5;
+    margin-right: 5px;
+  }
+  
+  .price-details {
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .price, .discount {
+    margin: 5px 0;
+  }
+  
+//   .amount {
+//     font-weight: bold;
+//   }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  .price-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  

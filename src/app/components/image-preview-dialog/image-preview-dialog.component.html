@@ -1,0 +1,18 @@
+<!-- <h1 mat-dialog-title>Image Preview</h1>
+<div mat-dialog-content>
+  <img [src]="data.imageSrc" alt="Image Preview" style="max-width: 100%;">
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onClose()">Close</button>
+</div> -->
+
+<h1 mat-dialog-title class="dialog-title">Image Preview</h1>
+<div class="close-button-container">
+  <button mat-button (click)="onClose()">Save</button>
+</div>
+<div mat-dialog-content class="dialog-container">
+  <div class="image-wrapper">
+    <img [src]="data.imageSrc" alt="Image Preview" class="dialog-image">
+  </div>
+</div>
+

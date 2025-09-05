@@ -1,0 +1,50 @@
+name: Angular CI/CD
+
+on:
+  push:
+    branches:
+      - main   # শুধু main branch এ push হলে pipeline চলবে
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Angular App
+        run: npm run build -- --configuration=production
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: angular-dist
+          path: dist/
+
+  deploy:
+    needs: build
+    runs-on: self-hosted   # এখানে তোমার সার্ভারের self-hosted runner চলবে
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Download Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: angular-dist
+          path: dist/
+
+      - name: Deploy to Server
+        run: |
+          echo "Deploying Angular App..."
+          sudo rm -rf /var/www/html/*
+          sudo cp -r dist/* /var/www/html/
+          echo "✅ Deployment finished!"

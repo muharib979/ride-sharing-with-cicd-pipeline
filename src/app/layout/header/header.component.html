@@ -1,0 +1,71 @@
+<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <span routerLink="" class="logo">VaaXY</span>
+    <span routerLink="/ride" class="nav-link" fxHide fxShow.gt-xs>Rider</span>
+    <span routerLink="/driver" class="nav-link" fxHide fxShow.gt-xs>Driver</span>
+    <span routerLink="/business" class="nav-link" fxHide fxShow.gt-xs>Business</span>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="end center">
+    <span class="nav-link" fxHide fxShow.gt-xs>Language</span>
+    <span routerLink="/login" class="nav-link" fxHide fxShow.gt-xs>Login</span>
+    <span  (click)="modalServOpen(signUpAs)" class="nav-link" fxHide fxShow.gt-xs>Signup</span>
+    <span routerLink="/about-us" class="nav-link" fxHide fxShow.gt-xs>About Us</span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" fxHide.gt-xs>
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <mat-menu #menu="matMenu" class="large-menu">
+    <button mat-menu-item>
+      <span routerLink="/rider">Rider</span>
+    </button>
+    <button mat-menu-item>
+      <span routerLink="/driver">Driver</span>
+    </button>
+    <button mat-menu-item>
+      <span routerLink="/business">Business</span>
+    </button>
+    <button mat-menu-item>
+      <span>Language</span>
+    </button>
+    <button mat-menu-item>
+      <span routerLink="/login">Login</span>
+    </button>
+    <button mat-menu-item>
+      <span routerLink="/sign-up">Signup</span>
+    </button>
+    <button mat-menu-item>
+      <span>About Us</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+<ng-template #signUpAs>
+
+  <!-- terms-modal.component.html -->
+  <div class="modal-header" style="background-color: #000000;">
+    <h4 class="modal-title text-white" id="modal-basic-title" style="margin-left: 190px;"> SignUp AS</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modalService.dismissAll()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+ <div class="container" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #9AD9EA;
+  background-image: linear-gradient(to right, #9AD9EA ,#417584 );border-radius: 5px;">
+  <div class="row">
+    <div class="col-md-12 mt-5 mb-5">
+      <label class="custom-label">Choose your Account</label>
+      <mat-radio-group (change)="onSignUpSelectionChange($event)">
+        <mat-radio-button  value="Rider">Rider</mat-radio-button>
+        <mat-radio-button  value="Driver">Driver</mat-radio-button>
+        <mat-radio-button  value="Business">Business</mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+  
+</div>
+<!-- <div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="modalService.dismissAll()">Close</button>
+</div> -->
+
+</ng-template>
+

@@ -1,0 +1,318 @@
+<div class="container">
+  <mat-card class="custom-card">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+          <img class="profile-photo" [src]="'data:image/'+picture+';base64,'+picture64" alt="image" /> <span
+            class="font-weight-bold">{{userName}} &nbsp; 4.5<span class="fa fa-star checked"></span></span>
+        </div>
+      </div>
+    </div>
+    <mat-card-content>
+      <form [formGroup]="riderEditForm">
+        <div class="row">
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>First Name</mat-label>
+              <input matInput formControlName="firstName">
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>MI</mat-label>
+              <input matInput formControlName="middleName">
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Last Name</mat-label>
+              <input matInput formControlName="lastName">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" required>
+              <mat-icon matSuffix>email</mat-icon>
+              <mat-error *ngIf="handleErrorRegister('email', 'required')">Email is required</mat-error>
+              <mat-error *ngIf="handleErrorRegister('email', 'email')">Email should be of valid format</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>SSN</mat-label>
+              <input matInput formControlName="ssn" appSsnMask>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label> Gender</mat-label>
+              <mat-select formControlName="gender">
+                <mat-option *ngFor="let gender of getGenderList" [value]="gender.name">
+                  {{ gender.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <!-- <div class="col-md-6">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Enter your password</mat-label>
+                      <input matInput formControlName="password" [type]="hide() ? 'password' : 'text'" />
+                      <button mat-icon-button matSuffix (click)="clickEvent($event)" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide()">
+                        <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+                      </button>
+                    </mat-form-field>
+                  </div> -->
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Select Country</mat-label>
+              <mat-select formControlName="country" (selectionChange)="onCountryChange($event.value)">
+                <mat-option *ngFor="let country of countries" [value]="country.name">
+                  {{ country.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-2">
+            <mat-form-field appearance="outline" class="custom-field">
+              <input matInput formControlName="phoneCode">
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Phone Number</mat-label>
+              <input matInput formControlName="phoneNumber" appPhoneMask>
+            </mat-form-field>
+          </div>
+          <div class="col-md-3">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Date of Birth</mat-label>
+              <input formControlName="dateOfBirth" matInput [matDatepicker]="picker">
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+          </div>
+          <div class="col-md-12">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Upload Picture</mat-label>
+              <input matInput type="text" formControlName="picture"  [value]="fileName1" readonly>
+              <input type="file" (change)="onFileSelected($event,'picture')" hidden #fileInput1>
+              <button mat-icon-button matSuffix (click)="fileInput1.click()">
+                <mat-icon>attach_file</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+
+        </div>
+
+
+        <!-- Address -->
+        <h4 class="text-center text-white"> Address</h4>
+        <div class="row mt-4">
+          <div class="col-md-12">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Street Address</mat-label>
+              <input matInput formControlName="streetAddress">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>City</mat-label>
+              <input matInput formControlName="city">
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>State</mat-label>
+              <mat-select formControlName="state">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let state of states" [value]="state">{{ state }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Zip Code</mat-label>
+              <input matInput formControlName="zipCode">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <!-- License Information -->
+        <h4 class="text-center text-white"> License Information</h4>
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>License Number</mat-label>
+              <input matInput formControlName="licenseNumber">
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Expiration Date</mat-label>
+              <input matInput [matDatepicker]="expPicker" formControlName="expirationDate">
+              <mat-datepicker-toggle matSuffix [for]="expPicker"></mat-datepicker-toggle>
+              <mat-datepicker #expPicker startView="multi-year" (yearSelected)="chosenYearHandler($event, expPicker)"  (monthSelected)="chosenMonthHandler($event, expPicker)"></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>License Type</mat-label>
+              <input matInput formControlName="licenseType">
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>State</mat-label>
+              <mat-select formControlName="issuingState">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let state of states" [value]="state">{{ state }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <!-- <div class="col-md-4">
+                    <mat-form-field appearance="outline" class="custom-field">
+                      <mat-label>Upload License Copy</mat-label>
+                      <input matInput type="text" [value]="fileName2" readonly>
+                      <input type="file" (change)="onFileSelected($event,'licenseCopyFront')" hidden #fileInput2>
+                      <button mat-icon-button matSuffix (click)="fileInput2.click()">
+                        <mat-icon>attach_file</mat-icon>
+                      </button>
+                    </mat-form-field>
+                  </div> -->
+          <!-- <div class="col-md-4">
+                    <mat-form-field appearance="outline" class="custom-field">
+                      <mat-label>Upload License Copy</mat-label>
+                      <input matInput type="text" [value]="fileName3" readonly>
+                      <input type="file" (change)="onFileSelected($event,'licenseCopyBack')" hidden #fileInput3>
+                      <button mat-icon-button matSuffix (click)="fileInput3.click()">
+                        <mat-icon>attach_file</mat-icon>
+                      </button>
+                    </mat-form-field>
+                  </div> -->
+        </div>
+
+        <!-- Vehicle Information -->
+        <h4 class="text-center text-white"> Vehicle Information</h4>
+
+        <div class="row mt-4">
+          <div class="col-md-3">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Brand</mat-label>
+              <input matInput formControlName="brand">
+            </mat-form-field>
+          </div>
+          <div class="col-md-3">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Model</mat-label>
+              <input matInput formControlName="modal">
+            </mat-form-field>
+          </div>
+          <div class="col-md-3">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Color</mat-label>
+              <input matInput formControlName="color">
+            </mat-form-field>
+          </div>
+          <div class="col-md-3">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Year</mat-label>
+              <input matInput formControlName="launchhYear">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>VehicleType</mat-label>
+              <input matInput formControlName="vehicleType">
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Capacity</mat-label>
+              <input matInput formControlName="capacity">
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Number Plate</mat-label>
+              <input matInput formControlName="numberPlate">
+            </mat-form-field>
+          </div>
+          <!-- <div class="col-md-4">
+                      <mat-form-field appearance="outline" class="custom-field">
+                        <mat-label>Upload Vehicle Copy</mat-label>
+                        <input matInput type="text" [value]="fileName4" readonly>
+                        <input type="file" (change)="onFileSelected($event,'vehicleCopy')" hidden #fileInput4>
+                        <button mat-icon-button matSuffix (click)="fileInput4.click()">
+                          <mat-icon>file_upload</mat-icon>
+                        </button>
+                      </mat-form-field>
+                  </div> -->
+        </div>
+
+        <!-- Insurance Information -->
+        <h4 class="text-center text-white"> Insurance Information</h4>
+
+        <div class="row mt-4">
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Insurance Company</mat-label>
+              <input matInput formControlName="insuranceCompany">
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Policy Number</mat-label>
+              <input matInput formControlName="insuranceNumber">
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>policy Phone Number</mat-label>
+              <input matInput formControlName="insurancePhoneNum" appPhoneMask>
+            </mat-form-field>
+          </div>
+          <!-- <div class="col-md-4">
+                    <mat-form-field appearance="outline" class="custom-field">
+                      <mat-label>Upload Policy Copy</mat-label>
+                      <input matInput type="text" [value]="fileName5" readonly>
+                      <input type="file" (change)="onFileSelected($event,'insuranceCopy')" hidden #fileInput5>
+                      <button mat-icon-button matSuffix class="center-button blue-button" (click)="fileInput5.click()">
+                        <mat-icon>file_upload</mat-icon>
+                      </button>
+                    </mat-form-field>
+                  </div> -->
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 text-center mt-3">
+            <button type="submit" mat-raised-button (click)="updateDriver()" style="color: white;"
+              [ngStyle]="{'background-color': isHovered ? hoverColor : normalColor}" (mouseenter)="onMouseEnter()"
+              (mouseleave)="onMouseLeave()">
+              Submit
+            </button>
+            <!-- <button mat-raised-button color="primary"  type="submit">Submit</button>  -->
+          </div>
+        </div>
+
+
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

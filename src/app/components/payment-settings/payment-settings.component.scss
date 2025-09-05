@@ -1,0 +1,156 @@
+
+.btnnn{
+    padding: 10px 50px;
+}
+
+.header{
+    background-color: #fff;
+}
+
+.btns:hover, .btns:focus{
+    background-color: #000000;
+    color:#fff;
+}
+
+.btns{
+    padding: 5px 30px;
+    border-radius: 10px;
+}
+
+
+
+  .ion-item {
+    --inner-padding-end: 0px; /* Adjust inner padding */
+    --background: none !important;
+    --border-style:none !important;
+  }
+
+
+  ::ng-deep .mat-tab-label {
+    font-weight: bolder;
+  }
+
+
+
+  .container {
+    display: flex;
+    justify-content: center;
+    // margin-top: 50px;
+
+  }
+  
+  mat-card {
+    padding: 25px;
+    width: 100%;
+    max-width: 700px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #9AD9EA;
+    background-image: linear-gradient(to right, #9AD9EA ,#417584 );
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+
+  @media (max-width: 600px) {
+    mat-form-field {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 900px) {
+    mat-form-field {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 300px) {
+    mat-form-field {
+      width: 100%;
+    }
+  }
+
+  .file-input {
+    display: block;
+    width: 100%;
+    padding: 0; /* Reset padding to ensure correct height */
+    border: none; /* Remove border to fit within mat-form-field */
+    box-shadow: none; /* Remove shadow to fit within mat-form-field */
+  }
+
+
+.center-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // margin-right: 10px!important;
+  height: 100%; /* Adjust height to match the input field if necessary */
+  width: 100%;  /* Adjust width to match the input field if necessary */
+}
+
+.blue-button {
+  background-color: #2196f3; /* Adjust color as needed */
+  color: white;
+  border-radius: 50%; /* Make it a circle */
+
+}
+
+        // change input left side border-radius
+
+// ::ng-deep .mdc-text-field--outlined{
+//   background-color: #fff;
+// }
+
+
+
+// ::ng-deep .mdc-text-field--outlined{
+//  padding-top: 20px !important;
+// }
+
+// ::ng-deep .mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__leading {
+//   border-top-left-radius: var(--mdc-shape-small, 12px) !important;
+//   border-bottom-left-radius: var(--mdc-shape-small, 12px) !important;
+//   background-color: #fff;
+
+// }
+
+// ::ng-deep .mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__trailing {
+//   border-top-right-radius: var(--mdc-shape-small, 12px) !important;
+//   border-bottom-right-radius: var(--mdc-shape-small,12px) !important;
+//   background-color: #fff;
+
+// }
+
+// ::ng-deep .custom-field .mat-form-field-flex {
+//   background-color: #fff; /* White background for the input area */
+//   border-radius: 12px; /* Optional: To match the rounded outline corners */
+// }
+
+// ::ng-deep .custom-field .mat-input-element {
+//   background-color: transparent; /* Ensure the input itself is transparent */
+// }
+
+//  .custom-field .mdc-text-field--outlined {
+//     border-radius: 12px; /* Make the outline corners rounded */
+//     background-color: #fff; 
+//   }
+
+// ::ng-deep .custom-field .mat-form-field-outline-end, 
+// ::ng-deep .custom-field .mat-form-field-outline-start {
+//   background-color: #fff; /* Make the background inside the outline white */
+// }
+
+// ::ng-deep .custom-field .mat-form-field-outline-thick {
+//   border-width: 1px; /* Adjust outline thickness as needed */
+// }
+
+
+.custom-mat-form-field .mat-mdc-form-field-floating-label {
+  padding-top: 10px !important; 
+  transform: scale(1.05) !important; /* Ensure scaling is applied if necessary */
+}
+
+
+
+
+

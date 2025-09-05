@@ -1,0 +1,155 @@
+
+<section>
+    <div class="container text-center">
+      <figure class="mt-3">
+        <blockquote class="blockquote">
+          <!-- <p>VaaXY - Where Every Ride is a red-Carpet Experience!"</p> -->
+        </blockquote>
+      </figure>
+    </div>
+  
+  </section>
+  
+  <section id="arrowSection" *ngIf="signUpAs !='Driver'">
+      <div class="container">
+        <div class="row  containerss" (mousedown)="startMoving($event)" 
+        (mousemove)="onMouseMove($event)" 
+        (mouseup)="stopMoving()">
+          <div class="col-md-5">
+            <div id="arrowAnim" >
+           <div class="trans shadows" style="font-size: 100px;color:#fff;font-weight: bolder;" #leftItem class="left non-draggable prevent-select">NOW</div>
+              <div class="arrowSliding">
+                <div class="arrow"></div>
+              </div>
+              <div class="arrowSliding delay1">
+                <div class="arrow"></div>
+              </div>
+              <div class="arrowSliding delay2">
+                <div class="arrow"></div>
+              </div>
+              <div class="arrowSliding delay3">
+                <div class="arrow"></div>
+              </div>
+             
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="mid">
+              <div   #middleItem class="middle circleRotate draggable">
+           
+      
+              </div>
+            </div>
+          
+          </div>
+          <div class="col-md-5">
+            <div id="arrowAnim1">
+              
+              <div class="trans shadows" style="font-size: 100px;color:#fff;font-weight: bolder;" #rightItem class="right non-draggable prevent-select"
+             >LATER</div>
+              <div class="arrowSliding1">
+                <div class="arrow1"></div>
+              </div>
+              <div class="arrowSliding1 delay11">
+                <div class="arrow1"></div>
+              </div>
+              <div class="arrowSliding1 delay21">
+                <div class="arrow1"></div>
+              </div>
+              <div class="arrowSliding1 delay31">
+                <div class="arrow1"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+  <!-- <section id="arrowSection">
+  <div class="water"></div>
+  
+    <div class="container ">
+      <div class="row ">
+        <div class="col-md-5">
+          <div id="arrowAnim" (click)="drop5()" cdkDropList #todoList="cdkDropList"
+          (cdkDropListDropped)="drop1($event)">
+         <div class="trans shadows" style="font-size: 100px;color:#fff;font-weight: bolder;">LATER</div>
+            <div class="arrowSliding">
+              <div class="arrow"></div>
+            </div>
+            <div class="arrowSliding delay1">
+              <div class="arrow"></div>
+            </div>
+            <div class="arrowSliding delay2">
+              <div class="arrow"></div>
+            </div>
+            <div class="arrowSliding delay3">
+              <div class="arrow"></div>
+            </div>
+           
+          </div>
+        </div>
+        <div class="col-md-2" style="margin-top: 90px;" cdkDropList  [cdkDropListConnectedTo]="[todoList,todoList1]">
+          <div class="service" cdkDrag>
+            <p id="circle" class="circleRotate top-right">V</p>
+    
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div id="arrowAnim1" cdkDropList #todoList1="cdkDropList"
+          (cdkDropListDropped)="drop3($event)">
+            
+            <div class="trans shadows" style="font-size: 100px;color:#fff;font-weight: bolder;"
+           >NOW</div>
+            <div class="arrowSliding1">
+              <div class="arrow1"></div>
+            </div>
+            <div class="arrowSliding1 delay11">
+              <div class="arrow1"></div>
+            </div>
+            <div class="arrowSliding1 delay21">
+              <div class="arrow1"></div>
+            </div>
+            <div class="arrowSliding1 delay31">
+              <div class="arrow1"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  -->
+  
+  
+  
+  
+  <section>
+    <div class="container">
+      <div class="text-center mt-3">
+         <h2>VaaXY: Elevate your Journey, Embrace the Extraordinary</h2>
+         <p style="text-align: justify;">Welcome to VaaXY, where every journey is a celebration of luxury, exclusivity, and the extraordinary. Tailored for those who seek the star treatment, VaaXY is not just a rideshare app; it's an invitation to experience life in celebrity style. Picture yourself gliding through the city in high-end, exotic vehicles, arriving at your destination with an air of opulence. Whether it's a red carpet event, an important meeting, or simply an evening out, VaaXY is your passport to unparalleled sophistication. We redefine ridesharing by providing more than just transportation – we offer a lifestyle. Your preferences matter, and with VaaXY, you can customize your ride to match your unique style and desires. Join us in embracing the allure of celebrity living, where every trip becomes a moment to feel like a star. Elevate your journey with VaaXY, and let the world witness the luxury that you deserve. Welcome aboard, where the extraordinary is the new ordinary.</p>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  
+  <svg>
+    <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+      <feTurbulence id="sea-filter" numOctaves="3" seed="2" baseFrequency="0.02 0.05"></feTurbulence>
+      <feDisplacementMap scale="20" in="SourceGraphic"></feDisplacementMap>
+      <animate xlink:href="#sea-filter" attributeName="baseFrequency" dur="60s" keyTimes="0;0.5;1" values="0.02 0.06;0.04 0.08;0.02 0.06" repeatCount="indefinite"/>
+  
+    </filter>
+  </svg>
+  
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  
+  
+  
+  
+  
+  
+  

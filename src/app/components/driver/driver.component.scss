@@ -1,0 +1,18 @@
+.text-body{
+    border: 3px solid #c7e9f2;
+    background-image: radial-gradient(circle at 50% 50%, #ebfffd, #adfffb);
+     padding: 30px;
+  }
+  
+  .btns:hover, .btns:focus{
+      background-color: #000000;
+      color:#fff;
+  }
+  
+  .btns{
+      padding: 8px 60px;
+      border-radius: 10px;
+      background-color: #9AD9EA;
+      background-image: linear-gradient(to right, #9AD9EA ,#278eab );
+      color:#fff;
+  }

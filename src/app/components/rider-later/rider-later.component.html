@@ -1,0 +1,33 @@
+
+<div class="container">
+    <div class="input-area">
+      <h2>I want to go from</h2>
+      <app-place-and-time
+        (placeChanged)="fromValue = $event"
+        placeholder="Enter from address..." 
+      ></app-place-and-time>
+      <h2>to</h2>
+      <app-place-and-time
+        (placeChanged)="toValue = $event" 
+        placeholder="Enter to address..."
+      ></app-place-and-time>
+      <div class="ride-selection-actions">
+        <button mat-raised-button color="primary" class="p-4" (click)="onButtonClick()">See Price</button>
+  
+      </div>
+    </div>
+    <!-- [hidden]="!fromValue.address && !toValue.address" -->
+    <div
+      class="display-area"
+  
+    >
+      <div>
+        <!-- <app-map-details [data]="fromValue"></app-map-details > -->
+        <!-- <app-map-details  [data]="toValue"></app-map-details > -->
+      </div>
+      <app-map-display [from]="fromValue" [to]="toValue" [isSheduler] ="true"></app-map-display>
+    </div>
+  </div>
+  
+  
+  

@@ -1,0 +1,51 @@
+<header>
+    <h1>Help and Support</h1>
+</header>
+<nav>
+    <ul>
+        <li><a (click)="helpAndSupport(faq)">FAQ</a></li>
+        <li><a  (click)="helpAndSupport(contact)">Contact Us</a></li>
+        <li><a  (click)="helpAndSupport(resources)">Resources</a></li>
+    </ul>
+</nav>
+<main>
+    <section *ngIf="faq" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>Question 1: How do I reset my password?</h3>
+            <p>Answer: To reset your password, click on 'Forgot Password' on the login page and follow the instructions.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Question 2: How do I contact support?</h3>
+            <p>Answer: You can contact support by filling out the form in the 'Contact Us' section.</p>
+        </div>
+        <!-- Add more FAQs as needed -->
+    </section>
+    <section *ngIf="contact" id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <section *ngIf="resources" id="resources">
+        <h2>Resources</h2>
+        <ul>
+            <li><a href="#">User Guide</a></li>
+            <li><a href="#">Troubleshooting Tips</a></li>
+            <li><a href="#">Community Forum</a></li>
+            <!-- Add more resources as needed -->
+        </ul>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+</footer>

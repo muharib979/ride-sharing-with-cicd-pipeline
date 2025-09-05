@@ -1,0 +1,108 @@
+<div class="container">
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="creditCardForm">
+        <h2 class="text-center text-black p-1"> Payment Settings</h2>
+        <div class="row">
+          <div class="col-md-12">
+            <mat-form-field appearance="outline" class="custom-field custom-mat-form-field">
+              <mat-label>cardholderName</mat-label>
+              <input matInput formControlName="cardholderName">
+            </mat-form-field>
+            
+
+          </div>
+          <div class="col-md-12">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label> Card</mat-label>
+              <mat-select formControlName="cardType">
+                <mat-option *ngFor="let card of getAllCardTypeList" [value]="card.id">
+                  {{ card.cardName }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-12">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>CardNumber</mat-label>
+              <input matInput formControlName="cardNumber" required appCardNumberMask>
+            <mat-error *ngIf="creditCardForm.get('cardNumber')?.hasError('required') && creditCardForm.get('cardNumber')?.touched">
+              Card Number is required.
+            </mat-error>
+            <mat-error *ngIf="creditCardForm.get('cardNumber')?.hasError('pattern') && creditCardForm.get('cardNumber')?.touched">
+              Card Number must be a valid format (numbers and hyphens only).
+            </mat-error>
+            </mat-form-field>
+
+          </div>
+          <div class="col-md-12">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>ExpirationDate</mat-label>
+              <input formControlName="expiDate" matInput [matDatepicker]="picker">
+
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-md-12">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Card Security Code</mat-label>
+              <input matInput formControlName="cardSecurityCode">
+            </mat-form-field>
+
+          </div>
+
+
+          <h4 class="text-center text-white mt-3 text-colors"> Billing Address </h4>
+          <div class="col-md-12">
+            <div class="checkbox-list">
+
+              <ion-item class="ion-item">
+                <ion-toggle (ionChange)="onToggleChanged('sameAs', $event)"
+                  [checked]="creditCardForm.get('sameAs')?.value === 1"></ion-toggle>
+                <ion-label labelPlacement="fixed">{{ creditCardForm.get('sameAs')?.value === 1 ? 'Yes' : 'No ' }} &nbsp;
+                  &nbsp;<strong>Same As Profile</strong></ion-label>
+              </ion-item>
+
+            </div>
+          </div>
+
+
+          <div class="col-md-6 mt-3">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Street Address</mat-label>
+              <input matInput formControlName="streetAddress">
+            </mat-form-field>
+
+          </div>
+          <div class="col-md-6 mt-3">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>City</mat-label>
+              <input matInput formControlName="city">
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 mt-3">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>State</mat-label>
+              <mat-select formControlName="state">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let state of states" [value]="state">{{ state }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 mt-3">
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Zip Code</mat-label>
+              <input matInput formControlName="zipCode">
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-12 text-center mt-3">
+            <input type="submit" (click)="creditCardSetup()" value="Submit" class="btns">
+          </div>
+
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

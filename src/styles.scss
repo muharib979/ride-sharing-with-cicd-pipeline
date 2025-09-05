@@ -1,0 +1,116 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('assets/css/custom.css');
+mat-card {
+  padding: 25px;
+  // width: 100%;
+  max-width: 900px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #9AD9EA;
+  background-image: linear-gradient(to right, #9AD9EA ,#417584 );
+}
+
+
+mat-card-header {
+  display: flex;
+  justify-content: center;
+  // background-color: #1976d2;
+  border-radius: 8px 8px 0 0;
+  padding: 16px;
+  // max-width: fit-content;
+
+  .sign-up-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+@media (max-width: 300px) {
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.file-input {
+  display: block;
+  width: 100%;
+  padding: 0; /* Reset padding to ensure correct height */
+  border: none; /* Remove border to fit within mat-form-field */
+  box-shadow: none; /* Remove shadow to fit within mat-form-field */
+}
+
+
+.center-button {
+display: flex;
+align-items: center;
+justify-content: center;
+// margin-right: 10px!important;
+height: 100%; /* Adjust height to match the input field if necessary */
+width: 100%;  /* Adjust width to match the input field if necessary */
+}
+
+.blue-button {
+background-color: #2196f3; /* Adjust color as needed */
+color: white;
+border-radius: 50%; /* Make it a circle */
+
+}
+
+.mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__leading {
+    border-top-left-radius: var(--mdc-shape-small, 12px) !important;
+    border-bottom-left-radius: var(--mdc-shape-small, 12px) !important;
+    // background-color: #fff;
+  
+  }
+
+ .mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__trailing {
+    border-top-right-radius: var(--mdc-shape-small, 12px) !important;
+    border-bottom-right-radius: var(--mdc-shape-small,12px) !important;
+    // background-color: #fff;
+  
+  }
+
+  .custom-field .mdc-text-field--outlined {
+    border-radius: 12px; /* Make the outline corners rounded */
+    background-color: #fff; 
+    // border-color: #007bff !important;
+  }
+
+ .mdc-text-field--outlined{
+    background-color: #fff;
+  }
+
+ .mat-mdc-form-field {
+    // --mat-mdc-form-field-floating-label-scale: 1.00 !important;
+    --mat-mdc-form-field-floating-label-scale: 0.75 !important;
+    --mat-mdc-form-field-label-transform: 3.75px !important;
+ }
+
+    
+.mat-mdc-text-field-wrapper.mdc-text-field--outlined .mdc-notched-outline--upgraded .mdc-floating-label--float-above{
+    --mat-mdc-form-field-label-transform: translateY(calc(calc(2.75px + var(--mat-form-field-container-height) / 2)* -1)) scale(var(--mat-mdc-form-field-floating-label-scale, 0.75))!important;
+}
+
+  
+

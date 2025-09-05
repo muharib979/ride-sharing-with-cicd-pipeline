@@ -1,0 +1,95 @@
+<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <span routerLink="/user" class="logo">VaaXY</span>
+      <span class="nav-link" routerLink="/rider" fxHide fxShow.gt-xs>Rider</span>
+      <span class="nav-link" routerLink="/driver" fxHide fxShow.gt-xs>Driver</span>
+      <span class="nav-link" routerLink="/business" fxHide fxShow.gt-xs>Business</span>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center">
+      <span class="nav-link" fxHide fxShow.gt-xs>Language</span>
+      <!-- <span class="nav-link" fxHide fxShow.gt-xs>Login</span> -->
+      <!-- <span routerLink="/sign-up" class="nav-link" fxHide fxShow.gt-xs>Signup</span> -->
+      <span class="nav-link" fxHide fxShow.gt-xs>About Us</span>
+      <div class="profile-section" [matMenuTriggerFor]="profileMenu">
+        <span class="username" fxHide fxShow.gt-xs>{{userName}}</span>
+        <!-- <img src="data:image/jpg;base64,{{picture}}" class="profile-photo"> -->
+        <img class="profile-photo"  [src]="'data:image/'+picture+';base64,'+picture64"
+        height="50px" width="20px" alt="image" />
+        <!-- <img class="profile-photo"  src="data:image/png;base64,{{picture64}}" -->
+        <mat-icon>arrow_drop_down</mat-icon>
+        <!-- <mat-icon>keyboard_arrow_down</mat-icon> -->
+      </div>
+      <button mat-icon-button [matMenuTriggerFor]="menu" fxHide.gt-xs>
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <mat-menu #menu="matMenu" class="large-menu">
+      <button mat-menu-item>
+        <span routerLink="/rider">Rider</span>
+      </button>
+      <button mat-menu-item>
+        <span routerLink="/driver">Driver</span>
+      </button>
+      <button mat-menu-item>
+        <span routerLink="/business">Business</span>
+      </button>
+      <button mat-menu-item>
+        <span>Language</span>
+      </button>
+      <button mat-menu-item>
+        <span>About Us</span>
+      </button>
+    </mat-menu>
+    
+    <mat-menu #profileMenu="matMenu" class="large-menu">
+      <button mat-menu-item (click)="goOnline()">
+        <!-- <mat-icon style="color: black;">cloud_done</mat-icon> -->
+        <!-- <mat-icon style="color: black;">network_wifi</mat-icon> -->
+        <mat-icon style="color: black;">rss_feed</mat-icon>
+        <span>Go Online</span>
+      </button>
+      <button mat-menu-item (click)="inbox()">
+        <mat-icon style="color: blue;">inbox</mat-icon>
+        <span>Inbox</span>
+      </button>
+      <button mat-menu-item (click)="profile()">
+        <mat-icon style="color: green;">person</mat-icon>
+        <span>My Profile</span>
+      </button>
+      <button mat-menu-item (click)="preferences()" *ngIf="this.signUpAs !='Driver'">
+        <mat-icon style="color: orange;">settings</mat-icon>
+        <span>My Preferences</span>
+      </button>
+      <button mat-menu-item (click)="paymentSetting()">
+        <mat-icon style="color: purple;">payment</mat-icon>
+        <span>Payment Setting</span>
+      </button>
+      <button mat-menu-item (click)="security()">
+        <mat-icon style="color: red;">security</mat-icon>
+        <span>Security & Password</span>
+      </button>
+      <button mat-menu-item (click)="termsAndConditions()">
+        <mat-icon style="color: teal;">description</mat-icon>
+        <span>Terms and Conditions</span>
+      </button>
+      <button mat-menu-item (click)="privacyStatement()">
+        <mat-icon style="color: magenta;">privacy_tip</mat-icon>
+        <span>Privacy Statements</span>
+      </button>
+      <button mat-menu-item (click)="helpAndSupport()">
+        <mat-icon style="color: brown;">help_outline</mat-icon>
+        <span>Help & Support</span>
+      </button>
+      <button mat-menu-item (click)="userDocumentation()">
+        <mat-icon style="color: teal;">description</mat-icon>
+        <span>Documentation</span>
+      </button>
+      <button mat-menu-item  (click)="logout()">
+        <mat-icon style="color: black;">exit_to_app</mat-icon>
+        <span>Log Out</span>
+      </button>
+    </mat-menu>
+    
+    
+    
+  </mat-toolbar>

@@ -1,0 +1,87 @@
+.font-time {
+    font-family: sans-serif;
+    font-weight: bold;
+  }
+  
+  #loginForm {
+    min-height: 100vh;
+    align-items: center;
+  }
+  
+  $purple: #8041F2;
+  $blue-gray: #3095ED;
+  
+  $button-font: 'Montserrat', sans-serif;
+  
+  .btn {
+    font-weight: bolder;
+  }
+  
+  .btn:hover,
+  .btn:focus {
+    color: white;
+    background: linear-gradient(to right, $purple , $blue-gray);
+  }
+  
+  .buttons {
+    background-color: #131718; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50px;
+   }
+  //  .mat-mdc-radio-button ~ .mat-mdc-radio-button {
+  //   margin-left: 16px;
+  //   --mdc-radio-state-layer-size: 29px;
+  // }
+
+  .custom-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    color: white;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  .rider {
+    background-color: #007bff; /* Blue */
+  }
+  
+  .driver {
+    background-color: #28a745; /* Green */
+  }
+  
+  .business {
+    background-color: #17a2b8; /* Light Blue */
+  }
+  
+  .custom-button:hover {
+    opacity: 0.8;
+  }
+  
+  .custom-label {
+    color: black; /* Set the text color to white */
+    font-size: 16px; /* Adjust the font size */
+    font-weight: bold; /* Make the text bold */
+   // background-color: #007bff; /* Optional: Add a background color to make it stand out */
+    padding: 5px 10px; /* Add padding for better spacing */
+    border-radius: 5px; /* Round the corners */
+    display: inline-block; /* Keep the label as an inline element with block-level styling */
+}
+
+
+
+.mat-internal-form-field--label {
+  --color: white !important;
+}
+
+
+
+  

@@ -1,0 +1,106 @@
+<div class="container">
+    <div class="row">
+        <form [formGroup]="userPreferenceForm">
+        <h2>Ride Type Preferences</h2>
+        <div class="checkbox-list">
+            <ion-item class="ion-item">
+                <ion-toggle (ionChange)="onToggleChanged('isVaaXY1', $event)" [checked]="userPreferenceForm.get('isVaaXY1')?.value === 1"></ion-toggle>
+                <ion-label slot="start"><strong>VaaXY-1</strong> (Cars/Small SUV, up to 4 people)</ion-label>
+            </ion-item>
+            <ion-item class="ion-item">
+                <ion-toggle (ionChange)="onToggleChanged('isVaaXY2', $event)" [checked]="userPreferenceForm.get('isVaaXY2')?.value === 1"></ion-toggle>
+                <ion-label slot="start"><strong>VaaXY-2</strong> (SUV/Vans, up to 7 people)</ion-label>
+            </ion-item>
+            <ion-item class="ion-item">
+                <ion-toggle (ionChange)="onToggleChanged('isVaaXY3', $event)" [checked]="userPreferenceForm.get('isVaaXY3')?.value === 1"></ion-toggle>
+                <ion-label slot="start"><strong>VaaXY-3</strong> (Luxury Cars/SUV, Exotic Cars/SUV, 4 to 7 people)</ion-label>
+            </ion-item>
+            <ion-item class="ion-item">
+                <ion-toggle (ionChange)="onToggleChanged('isVaaXY4', $event)" [checked]="userPreferenceForm.get('isVaaXY4')?.value === 1"></ion-toggle>
+                <ion-label slot="start"><strong>VaaXY-4</strong> (Small Bus/ Big Bus, 10 to 36 people)</ion-label>
+            </ion-item>
+        </div>
+
+        <h2>Ride Quality Preferences</h2>
+        <div class="checkbox-list">
+            <ion-item class="ion-item">
+                <ion-toggle (ionChange)="onToggleChanged('isVaaXYValue', $event)" [checked]="userPreferenceForm.get('isVaaXYValue')?.value === 1"></ion-toggle>
+                <ion-label slot="start"><strong>VaaXY Value </strong>
+                    (Cost effective, smooth ride, VaaXY-1 Ride Type)</ion-label>
+            </ion-item>
+            <ion-item class="ion-item">
+                <ion-toggle (ionChange)="onToggleChanged('isVaaXYRelax', $event)" [checked]="userPreferenceForm.get('isVaaXYRelax')?.value === 1"></ion-toggle>
+                <ion-label slot="start"><strong>VaaXY Relax </strong>
+                    (Comfortable, smooth and cost more than Value ride, VaaXY-1, VaaXY-2 Ride)</ion-label>
+            </ion-item>
+            <ion-item class="ion-item">
+                <ion-toggle (ionChange)="onToggleChanged('isVaaXYElite', $event)" [checked]="userPreferenceForm.get('isVaaXYElite')?.value === 1"></ion-toggle>
+                <ion-label slot="start">bsp;<strong>VaaXY Elite
+                    </strong>(Top level ride, cost more than Value & Relax, VaaXY-3)</ion-label>
+            </ion-item>
+            <ion-item class="ion-item">
+                <ion-toggle (ionChange)="onToggleChanged('isVaaXYPets', $event)" [checked]="userPreferenceForm.get('isVaaXYPets')?.value === 1"></ion-toggle>
+                <ion-label slot="start"><strong>VaaXY Pets</strong> (Cost
+                    Extra, VaaXY-1, VaaXY-2, VaaXY-3)</ion-label>
+            </ion-item>
+
+        </div>
+
+        <h2>Car Temperature</h2>
+        <div class="checkbox-list">
+
+            <ion-item class="ion-item">
+                <ion-toggle (ionChange)="onToggleChanged('isCool', $event)" [checked]="userPreferenceForm.get('isCool')?.value === 1"></ion-toggle>
+                <ion-label slot="start"><strong>Cool </strong></ion-label>
+            </ion-item>
+            <ion-item class="ion-item">
+                <ion-toggle (ionChange)="onToggleChanged('isWarm', $event)" [checked]="userPreferenceForm.get('isWarm')?.value === 1"></ion-toggle>
+                <ion-label slot="start"><strong>Warm </strong></ion-label>
+            </ion-item>
+            <ion-item class="ion-item">
+                <ion-toggle (ionChange)="onToggleChanged('isNormal', $event)" [checked]="userPreferenceForm.get('isNormal')?.value === 1"></ion-toggle>
+                <ion-label slot="start"><strong>Normal</strong></ion-label>
+            </ion-item>
+        </div>
+
+        <h2>Toll Road</h2>
+        <div class="checkbox-list">
+
+            <ion-item class="ion-item">
+                <ion-toggle (ionChange)="onToggleChanged('isAvoidTollRoad', $event)" [checked]="userPreferenceForm.get('isAvoidTollRoad')?.value === 1"></ion-toggle>
+                <ion-label slot="start"><strong>Avoid Toll Road </strong></ion-label>
+            </ion-item>
+            <ion-item class="ion-item">
+                <ion-toggle (ionChange)="onToggleChanged('isOkayWithTollRoad', $event)" [checked]="userPreferenceForm.get('isOkayWithTollRoad')?.value === 1"></ion-toggle>
+                <ion-label slot="start"><strong>Okay with Toll Road </strong></ion-label>
+            </ion-item>
+        </div>
+
+
+        <h2>Preferred Drivers & ratings</h2>
+        <div class="checkbox-list">
+            <ion-item class="ion-item-range">
+                <ion-label>Rating</ion-label>
+                <ion-range class="ion-range"
+                  aria-label="Dual Knobs Range"
+                  dualKnobs="true"
+                  [pin]="true"
+                  [ticks]="true"
+                  [snaps]="true"    
+                  [min]="0"
+                  [max]="5"
+                  [value]="userPreferenceForm.get('rangeValues')?.value"
+                  (ionChange)="onRangeChange($event)"
+                ></ion-range>
+              </ion-item>
+        </div>
+
+        <div>
+
+            <br>
+            <br>
+            <span><a class="btns" (click)="userPreferenceSave()">Save</a></span>
+        </div>
+    </form>
+    </div>  
+</div>

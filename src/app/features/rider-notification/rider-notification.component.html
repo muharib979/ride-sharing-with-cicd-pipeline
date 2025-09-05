@@ -1,0 +1,38 @@
+<!-- <button (click)="sendRiderRequest()">Send Request</button> -->
+<div class="bg-wrapper">
+  <header class="inbox-header">
+    <h1 class="text-center">Driver Information</h1>
+    <button mat-raised-button color="warn" (click)="onClose()">Close</button>
+  </header>
+
+
+  <div class="notification-card" *ngFor="let message of flattenedMessages">
+    <div class="card-container">
+      <!-- Rider Image and Name -->
+      <br>
+      <div class="main-row">
+        <img [src]="'data:image/jpeg;base64,' + message.pictureBase64" alt="Rider Base64 Picture" width="100">
+        <div class="rider-details">
+          <h3 class="rider-name"><strong>DriverName: </strong>{{ message.driverName }}</h3>
+          <p class="rider-status"><strong>Phone: </strong>{{ message.phoneNumber }}</p>
+          <p class="rider-status"><strong>Rating: </strong> ⭐️ 4.8</p>
+          <p class="rider-status"><strong>Modal: </strong>{{ message.modal }}</p>
+          <p class="rider-status"><strong>Color: </strong>{{ message.color }}</p>
+        </div>
+
+
+        <!-- Trip Details -->
+
+        <div class="trip-details">
+          <p class="rider-status"><strong>NumberPlate: </strong>{{ message.numberPlate }}</p>
+          <p class="rider-status"><strong>Brand: </strong>{{ message.brand }}</p>
+          <p class="rider-status"><strong>LaunchhYear: </strong>{{ message.launchhYear }}</p>
+          <p class="rider-status"><strong>LicenseNumber: </strong>{{ message.licenseNumber }}</p>
+          <p class="rider-status"><strong>ExpirationDate: </strong>{{message.expirationDate | date: 'dd MMMM yyyy' }}</p>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

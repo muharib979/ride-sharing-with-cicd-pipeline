@@ -1,0 +1,157 @@
+<!-- <div class="main-content">
+  <button mat-button color="primary" (click)="onButtonClick()">See Price</button>
+</div> -->
+
+<div class="man-container" *ngIf="mapShowLarge">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-7 map col-md-offset-2">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="main-container" *ngIf="mapShowWithdetails">
+  <!-- Left Section: Get a Ride -->
+  <div class="ride-form-section" *ngIf="isSheduler">
+    <form [formGroup]="shedulerForm">
+      <!-- Input field bound to the reactive form control -->
+      <mat-form-field appearance="outline" class="custom-field">
+        <mat-label>Pickup Time</mat-label>
+        <input matInput formControlName="pickupDateTime" readonly />
+      </mat-form-field>
+    
+      <!-- ion-datetime displayed conditionally -->
+      <div>
+        <ion-datetime
+          presentation="date-time"
+          [preferWheel]="true"
+          (ionChange)="onDateTimeChange($event)"
+        ></ion-datetime>
+      </div>
+    </form>
+    
+
+    <!-- <form>
+        <mat-form-field appearance="outline" class="custom-field" (click)="toggleScheduler()">
+          <mat-label>Pickup Now</mat-label>
+          <mat-select [value]="selectedDateTime">
+            <mat-option *ngIf="selectedDateTime" [value]="selectedDateTime">
+              {{ selectedDateTime }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      <div *ngIf="showSheduler">
+        <ion-datetime presentation="date-time" [preferWheel]="true" (ionChange)="onDateTimeChange($event)"></ion-datetime>
+      </div>
+    </form> -->
+
+  </div>
+
+  <!-- Middle Section: Ride Options -->
+  <div class="ride-options-section">
+    <h2>Choose a ride</h2>
+    <p><strong>Time : </strong>{{travelDuration}} &nbsp;&nbsp;&nbsp;<strong>Distance : </strong>{{totalDistance}} miles</p>
+    <!-- <p>{{totalDistance}}</p> -->
+
+    <!-- Ride Option Item -->
+    <div class="ride-option" *ngFor="let ride of rideOptions" (click)="selectRide(ride)">
+      <div class="ride-option-inner" [class.selected]="selectedRide === ride">
+        <!-- Rider Picture on the Left -->
+        <img class="ride-icon map" alt="{{ ride.name }}">
+
+        <!-- Ride Details -->
+        <div class="ride-details">
+          <h3>{{ ride.name }}</h3>
+          <p>{{ ride.time }} away • {{ ride.arrivalTime }}</p>
+          <p class="ride-description">{{ ride.description }}</p>
+        </div>
+
+        <!-- Ride Price on the Right -->
+        <div class="ride-price">
+          <p>${{ ride.price }}</p>
+        </div>
+      </div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <!-- Action Buttons -->
+    <div class="ride-selection-actions">
+      <button mat-stroked-button (click)="openOfferFareDialog()">Offer Your Fair</button>
+      <!-- <button mat-stroked-button color="primary">Offer Your Fair</button> -->
+      <button mat-raised-button color="primary" (click)="sendRiderRequest()">Request {{ selectedRide?.name || 'Ride'
+        }}</button>
+    </div>
+
+  </div>
+
+  <!-- Right Section: Map -->
+  <!-- <map-marker *ngFor="let markerPosition of markerPositions" [position]="markerPosition">
+  </map-marker> -->
+
+  <div class="map-section">
+    <google-map #map [zoom]="zoom">
+      <map-directions-renderer *ngIf="directionsResult$ | async as directionResults"
+        [directions]="directionResults"></map-directions-renderer>
+
+      <map-marker
+      *ngFor="let driver of driversList"
+      [position]="{lat: driver.latitude, lng: driver.longitude}" 
+      [icon]="carIcon">
+    </map-marker>
+
+  
+    </google-map>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- <div *ngIf="distance">
+    <p>Price: {{ distance }}</p> 
+    <p>Price: {{ userId }}</p> 
+  </div>
+
+  <div *ngIf="travelDuration">
+    <p>Estimated Travel Time: {{ travelDuration }}</p>
+  </div> -->
+
+<ng-template #dialogTemplate>
+  <h2 mat-dialog-title class="ride-details-title">
+    Choose a rideaaa
+    <br>
+  </h2>
+  <mat-dialog-actions align="end" class="dialog-actions">
+    <button mat-raised-button color="primary">Close</button>
+  </mat-dialog-actions>
+
+  <mat-dialog-content class="ride-details-content">
+    <!-- <p class="recommended">Recommended</p> -->
+    <p>Time:{{ travelDuration }} Minutes</p>
+
+    <!-- Ride Options -->
+    <div class="ride-option" *ngFor="let ride of rideOptions">
+      <div class="ride-option-inner" (click)="selectRide(ride)">
+        <img class="ride-icon" [src]="ride.icon" alt="Ride icon">
+        <div class="ride-details">
+          <h3>{{ ride.name }}</h3>
+          <p>{{ ride.time }} away • {{ ride.arrivalTime }}</p>
+          <p class="ride-description">{{ ride.description }}</p>
+        </div>
+        <div class="ride-price">
+          <p>{{ distance }}</p>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="dialog-actions">
+    <button mat-stroked-button class="add-payment-method">Add Payment Method</button>
+    <button mat-raised-button color="primary">Request {{ selectedRide?.name || 'Ride'
+      }}</button>
+  </mat-dialog-actions>
+</ng-template>

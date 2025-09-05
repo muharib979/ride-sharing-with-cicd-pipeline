@@ -1,0 +1,46 @@
+<!-- <h2 mat-dialog-title class="ride-details-title">
+  <span class="car-icon">🚗</span> Ride Details
+</h2>
+<mat-dialog-content class="ride-details-content">
+  <div class="ride-info">
+    <p><span class="label">Duration:</span> {{ data.travelDuration }}</p>
+    <p><span class="label">Distance:</span> {{ data.travelDistance }}</p>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end" class="dialog-actions">
+  <button mat-raised-button color="primary" (click)="onClose()">Close</button>
+</mat-dialog-actions> -->
+
+<h2 mat-dialog-title  class="ride-details-title">
+  Choose a ride
+  <br>
+</h2>
+<mat-dialog-actions align="end" class="dialog-actions">
+  <button mat-raised-button color="primary" (click)="onClose()">Close</button>
+</mat-dialog-actions>
+
+<mat-dialog-content class="ride-details-content">
+  <!-- <p class="recommended">Recommended</p> -->
+  <p>Time:{{ data.travelDuration }}</p>
+
+  <!-- Ride Options -->
+  <div class="ride-option" *ngFor="let ride of rideOptions">
+    <div class="ride-option-inner" (click)="selectRide(ride)">
+      <img class="ride-icon" [src]="ride.icon" alt="Ride icon">
+      <div class="ride-details">
+        <h3>{{ ride.name }}</h3>
+        <p>{{ ride.time }} away • {{ ride.arrivalTime }}</p>
+        <p class="ride-description">{{ ride.description }}</p>
+      </div>
+      <div class="ride-price">
+        <p>{{ data.travelDistance }}</p>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions class="dialog-actions">
+  <button mat-stroked-button class="add-payment-method">Add Payment Method</button>
+  <button mat-raised-button color="primary" (click)="requestRide()">Request {{ selectedRide?.name || 'Ride' }}</button>
+</mat-dialog-actions>
+

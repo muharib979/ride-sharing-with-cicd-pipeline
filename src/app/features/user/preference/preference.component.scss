@@ -1,0 +1,117 @@
+.checked {
+    color: orange;
+  }
+
+.checkbox-list {
+    // background-color: #fff;
+    // padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.checkbox-list label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.checkbox-list input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+
+.container {
+    background-color: #9AD9EA;
+    background-image: linear-gradient(to right, #9AD9EA ,#417584 );
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+
+.btns:hover, .btns:focus{
+    background: rgb(11,0,36);
+    background: linear-gradient(90deg, rgba(11,0,36,1) 0%, rgba(0,0,0,1) 0%, rgba(0,212,255,1) 100%);
+    color:#fff;
+  }
+  
+  .btns{
+      padding: 8px 30px;
+      border-radius: 10px;
+      background-color: #000000;
+      text-decoration: none;
+      color:#fff;
+      font-weight: bolder;
+      cursor:pointer;
+      
+  }
+
+  .styless{
+    color: white;
+  }
+  .ion-item {
+    --inner-padding-end: 5px; /* Adjust inner padding */
+    --background: none !important;
+    --border-style:none !important;
+  }
+
+  .ion-item-range {
+    --inner-padding-end: 55px; /* Adjust inner padding */
+    --background: none !important;
+    --border-style:none !important;
+  }
+
+// :in-range
+
+::ng-deep .ion-range::part(tick) {
+  --background: #a2d2ff!important;
+}
+
+::ng-deep .ion-range::part(tick-active) {
+  --background: #bde0fe;
+}
+
+::ng-deep .ion-range::part(pin) {
+  --display: inline-flex;
+  --align-items: center;
+  --justify-content: center;
+  --background: #ffafcc;
+  --color: #fff;
+  --border-radius: 50%;
+  --transform: scale(1.01);
+  --top: -20px;
+  --min-width: 28px;
+  --height: 28px;
+  --transition: transform 120ms ease, background 120ms ease;
+}
+
+::ng-deep .ion-range::part(pin)::before {
+  content: none;
+}
+
+::ng-deep .ion-range::part(knob) {
+  background: #ffc8dd;
+}
+
+::ng-deep .ion-range::part(bar) {
+  background: #a2d2ff;
+}
+
+::ng-deep .ion-range::part(bar-active) {
+  background: #bde0fe;
+}
+
+::ng-deep .ion-range {
+  --knob-border-radius: 50%!important;
+  --knob-background: #d41a1a !important;
+  // --knob-box-shadow: 0 3px 1px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.13), 0 0 0 1px rgba(0,0,0,0.02);
+  // --knob-size: 28px;
+  // --bar-height: 2px;
+  // --bar-background: rgba(var(--ion-text-color-rgb,0,0,0),0.1);
+  --bar-background-active: var(--ion-color-primary, #0c0d0e)!important;
+  // --bar-border-radius: 0;
+  // --height: 42px;
+  //--padding: 8px 16px;
+}

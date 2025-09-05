@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  justify-content: center;
+  // margin-top: 50px;
+
+}
+
+mat-card {
+  padding: 25px;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #9AD9EA;
+  background-image: linear-gradient(to right, #9AD9EA ,#417584 );
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+@media (max-width: 300px) {
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.file-input {
+  display: block;
+  width: 100%;
+  padding: 0; /* Reset padding to ensure correct height */
+  border: none; /* Remove border to fit within mat-form-field */
+  box-shadow: none; /* Remove shadow to fit within mat-form-field */
+}
+
+
+.center-button {
+display: flex;
+align-items: center;
+justify-content: center;
+// margin-right: 10px!important;
+height: 100%; /* Adjust height to match the input field if necessary */
+width: 100%;  /* Adjust width to match the input field if necessary */
+}
+
+.blue-button {
+background-color: #2196f3; /* Adjust color as needed */
+color: white;
+border-radius: 50%; /* Make it a circle */
+
+}
+
+
+
+      // change input border-radius shape
+::ng-deep .mat-mdc-text-field-wrapper {
+  border-radius: 15px !important;
+}
+
+
+
+
+
+      

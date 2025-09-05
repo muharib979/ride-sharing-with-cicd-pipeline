@@ -1,0 +1,462 @@
+// #arrowSection{
+//     background-color: #9AD9EA;
+//     height: 100px;;
+//   }
+//   button {
+//     width: 150px;
+//     height: 50px;
+//     margin-top: 40px; 
+//  }
+ 
+//  button:hover {
+//     background-color: pink;
+//  }
+ 
+//  button:hover:after {
+//      content: attr(data-tip);
+//      color: red;   
+//      display: block;
+//      position: absolute;
+//     //  top: 20%;
+//     bottom: 55%;
+//  }
+
+//  .owl-dt-container-buttons {
+//    display: none !important;
+//    flex-direction: row-reverse;
+// }
+
+// * {
+//    margin: 0;
+//    padding: 0;
+//    border-size: border-box;
+//  }
+ 
+//  html, body {
+//    height: 100vh;
+//      background-image:url(http://www.psdgraphics.com/file/colorful-triangles-background.jpg);
+//    font-family: 'Balsamiq Sans', sans-serif;
+//  }
+ 
+//  body {
+//    display: flex;
+//    align-items: center;
+//    justify-content: center;
+//  }
+
+
+// .backgroound-color{
+//   height: 600px;
+//   background-size: 100%;
+//   // opacity:0.7;
+//   background-repeat: no-repeat;
+//   background-color:#9AD9EA;;
+// }
+// #21434c
+// #16c2f1
+// #19dfbe
+// #417584 
+.left-side{
+    border: 2px solid #000000;
+    height: 400px;padding-top:15px;
+    border-radius: 9px;
+   background-color: #9AD9EA;
+   background-image: linear-gradient(to right, #9AD9EA ,#417584 );
+  }
+  
+  .col-form-label{
+    color:white;
+    font-weight: bolder;
+  }
+  .col-md-2{
+    width: 10.666667% !important;
+  }
+  .form-control{
+     padding: 0.575rem 1.75rem !important;
+    
+  }
+  
+  .btn {
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 0.4em;
+  
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px 20px 20px 20px;
+    padding: 1.0em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+  
+    &:hover,
+    &:focus {
+      color: #fff;
+      outline: 0;
+    }
+  }
+  
+  
+  .second {
+    border-radius: 3em;
+  
+    color: black
+    }
+   
+    
+  
+  
+  
+  
+
+  
+  .dropdown-content {
+    display: none;
+   //  position: absolute;
+   //  background-color: #f9f9f9;
+    min-width: 160px;
+   //  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   //  z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 2px 8px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  
+  
+  .btns {
+   box-sizing: border-box;
+   appearance: none;
+   background-color: transparent;
+   // border: 1px solid red;
+   // border-radius: 0.4em;
+   // color: red;
+   cursor: pointer;
+   display: flex;
+   align-self: center;
+   font-size: 1rem;
+   font-weight: 400;
+   line-height: 1;
+   margin: 20px;
+   padding: 1.0em 4.1em 1.0em 1.0em;
+   text-decoration: none;
+   text-align: center;
+   text-transform: uppercase;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 700;
+  
+   &:hover,
+   &:focus {
+     color: #fff;
+     outline: 0;
+   }
+  }
+  
+  .btnss {
+   box-sizing: border-box;
+   appearance: none;
+   background-color: transparent;
+   border: 1px solid red;
+   border-radius: 0.4em;
+   color: red;
+   cursor: pointer;
+   display: flex;
+   align-self: center;
+   font-size: 1rem;
+   font-weight: 400;
+   line-height: 1;
+   margin: 20px;
+   padding: 1.0em 2.8em;
+   text-decoration: none;
+   text-align: center;
+   text-transform: uppercase;
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 700;
+  
+   &:hover,
+   &:focus {
+     color: #fff;
+     outline: 0;
+   }
+  }
+  
+  .fifth {
+   border-color: purple;
+   // border: 0;
+   border-radius: 0;
+   color: purple;
+   position: relative;
+   overflow: hidden;
+   z-index: 1;
+   transition: color 150ms ease-in-out;
+   
+   &:after {
+     content: '';
+     position: absolute;
+     display: block;
+     top: 0;
+     left: 50%;
+     transform: translateX(-50%);
+     width: 0;
+     height: 100%;
+     background: purple;
+     z-index: -1;
+     transition: width 150ms ease-in-out;
+   }
+   
+   &:hover {
+     color: #fff;
+     &:after {
+       width: 110%;
+     }
+   }
+  }
+  
+  
+  .input1{
+   width: 300px;
+  }
+  .input2{
+   width: 250px;
+   margin-left: 25px;
+  }
+  
+  .input {
+   width: 300px;
+   padding: 10px;
+   font-size: 16px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+  }
+  
+  
+  .inputField {
+   text-align: center;
+  }
+  
+  /* Style the arrow container */
+  .arrow-container {
+   position: relative;
+   display: inline-block;
+  }
+  
+  /* Style the arrow symbol */
+  .arrow-symbol::after {
+   content: "▼"; /* Unicode character for down arrow */
+   font-size: 18px;
+   color: #555;
+   position: absolute;
+   top: 50%;
+   right: 10px;
+   transform: translateY(-50%);
+   pointer-events: none; /* Ensure the arrow doesn't interfere with input */
+  }
+  
+  .header-color{
+   color: #000000 !important;
+  }
+  
+  
+  .button {
+   background-color: #9AD9EA; /* Green */
+   border: none;
+   color: black;
+   padding: 5px 90px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   margin: 4px 2px;
+   cursor: pointer;
+   border-radius: 50px;
+  }
+  .buttons {
+   background-color: #9AD9EA; /* Green */
+   border: none;
+   color: black;
+   padding: 5px 106px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   margin: 4px 2px;
+   cursor: pointer;
+   border-radius: 50px;
+  }
+  .button5 {font-size: 34px;}
+  
+  .map-section{
+   background-image: url(../../../assets/images/map.jpg);
+  
+  }
+  
+  //login
+  
+  .btns{
+   // transition: all .5s ease;
+   width: 35%;
+   border-radius: 30px;
+   color:#000000;
+   font-weight: 600;
+   background-color: #fff;
+   border: 1px solid #000000;
+   margin-top: 1.5em;
+   margin-bottom: 1em;
+   margin-left: 6em;
+  }
+  
+  .btns:hover, .btns:focus{
+   background-color: #000000;
+   color:#fff;
+  }
+  
+  
+  // Profile Information
+  
+  .wrapper-image {
+   text-align: center;
+  }
+  
+  .image--cover {
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+  
+   object-fit: cover;
+   object-position: center right;
+  }
+  
+  
+  ul li{
+   border: 1px solid #000000;
+   border-radius: 10px;
+   line-height: 50px;
+   text-align: center;
+   list-style: none;
+  
+  }
+  
+  .btns{
+   padding: 10px 30px;
+   border-radius: 10px;
+  }
+  
+  .header{
+   background-color: #fff;
+  }
+
+  #pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 300px;
+    z-index: 5;
+    position: absolute;
+  }
+  
+  #map {
+    height: 100%;
+  }
+
+
+
+  .input-area {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .display-area {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    height: calc(100vh - 180px);
+
+    > div {
+      // width: 30%;
+      // overflow: auto;
+      // padding: 8px;
+      // height: inherit;
+
+      > * {
+        margin-bottom: 16px;
+      }
+    }
+
+    > app-map-display {
+      width: 100%;
+      height: inherit;
+    }
+  }
+
+  .display-area[hidden] {
+    display: none;
+  }
+
+  .container {
+    max-width: 1440px;
+  }
+
+
+
+  app-place-and-time {
+    width: 300px;
+    padding-top: 10px;
+  }
+
+  .priceButton{
+    padding-top: 10px;
+  }
+
+  .ride-selection-actions button {
+    width: 100%; /* Make buttons full width */
+    margin-bottom: 10px; /* Spacing between buttons */
+  }
+  
+  .ride-selection-actions button:last-child {
+    margin-bottom: 13px; /* No margin for the last button */
+  }
+  
+  /* Mobile responsive layout */
+  @media (max-width: 768px) {
+    .ride-selection-actions {
+      flex-direction: column; /* Stack buttons vertically on small screens */
+    }
+  }
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
